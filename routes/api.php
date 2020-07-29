@@ -22,3 +22,5 @@ Route::post('/register', 'Api\AuthController@register');
 Route::post('/login', 'Api\AuthController@login');
 
 Route::apiResource('/article', 'Api\ArticlesController')->middleware('auth:api');
+
+Route::apiResource('/order', 'Api\OrdersController')->middleware('auth:api');

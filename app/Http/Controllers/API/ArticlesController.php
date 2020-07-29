@@ -118,4 +118,5 @@ class ArticlesController extends Controller
         return response($response);
 
     }
+    
 }

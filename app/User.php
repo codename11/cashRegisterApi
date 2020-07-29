@@ -40,7 +40,7 @@ class User extends Authenticatable
 
     public function orders()
     {
-        return $this->belongsToMany('App\Orders');
+        return $this->belongsToMany('App\Orders', "order_id", "id");
     }
 
 }

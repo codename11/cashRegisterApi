@@ -10,9 +10,9 @@ class Article extends Model
         'name', 'barcode', 'price',
     ];
 
-    public function Order_Details()
+    public function order_details()
     {
-        return $this->belongsToMany('App\Order_Details');
+        return $this->hasMany('App\Order_Details', "order_details_id", "id");
     }
 
 }
