@@ -24,3 +24,5 @@ Route::post('/login', 'Api\AuthController@login');
 Route::apiResource('/article', 'Api\ArticlesController')->middleware('auth:api');
 
 Route::apiResource('/order', 'Api\OrdersController')->middleware('auth:api');
+
+Route::apiResource('/order_details', 'Api\Order_DetailsController')->middleware('auth:api');

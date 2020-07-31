@@ -71,13 +71,13 @@ class OrdersController extends Controller
                 $order = new Order;
                 $order->user_id = $data["userId"];
                 $article = Article::find($data["articles"][$i]["article_id"]);
-                $order->total_price = $data["articles"][$i]["quantity"]*(float)$article->price;
+                $order->total_price = (int)$data["articles"][$i]["quantity"]*(float)$article->price;
                 $order->save();
 
                 $order_details = new Order_Details;
                 $order_details->order_id = $order->id;
                 $order_details->article_id = $article->id;
-                $order_details->quantity = $data["articles"][$i]["quantity"];
+                $order_details->quantity = (int)$data["articles"][$i]["quantity"];
                 $order_details->save();
 
                 $ordersAndDetails->orders[$i] = new OrderResource($order);
