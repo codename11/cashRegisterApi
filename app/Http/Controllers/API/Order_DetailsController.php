@@ -53,7 +53,7 @@ class Order_DetailsController extends Controller
     public function show($id)
     {
 
-        $order_details = Order_Details::find($id)->with('orders', 'articles')->get();
+        $order_details = Order_Details::with('orders', 'articles')->find($id);
 
         $response = array(
             "message" => "Retrieved successfully",

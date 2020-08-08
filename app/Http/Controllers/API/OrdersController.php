@@ -105,7 +105,7 @@ class OrdersController extends Controller
     public function show($id)
     {
 
-        $order = Order::find($id)->with('user', 'order_details')->get();
+        $order = Order::with('user', 'order_details')->find($id);
 
         $response = array(
             "message" => "Retrieved successfully",

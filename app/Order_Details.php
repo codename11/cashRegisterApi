@@ -17,7 +17,7 @@ class Order_Details extends Model
 
     public function articles()
     {
-        return $this->hasMany('App\Article', "id", "article_id");
+        return $this->hasOne('App\Article', "id", "article_id");
     }
 
 }
